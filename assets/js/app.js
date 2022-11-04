@@ -47,13 +47,13 @@ createApp({
                     done: false
                 }
 
-                if(this.todoLists.includes(newTask.text)){
+                if(this.todoLists.includes(newTask.text) === this.valueNewTask){
                     this.errorMsg = 'Attenzione! Task già esistente.'
                 }
                 else{
                     this.todoLists.unshift(newTask);
                 }
-
+                            console.log(this.valueNewTask, newTask.text);
                 // this.todoLists.unshift(newTask);
 
             }

@@ -24,6 +24,16 @@ input::placeholder {
     font-size: 1.5rem;
 }
 
+span {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+span.done {
+    font-weight: normal;
+    opacity: .7;
+}
+
 span:hover,
 i:hover {
     cursor: pointer;

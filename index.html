@@ -30,7 +30,7 @@
                         <img :src="pathImg + nameImg" :alt="nameImg">
                     </div>
 
-                    <div class="input-area d-flex justify-content-between align-items-center mb-3">
+                    <div class="input-area d-flex justify-content-between align-items-center mb-4">
 
                         <input 
                             @keyup.enter="createTask()"
@@ -42,7 +42,7 @@
                         
                     </div>
 
-                    <p class="error-msg text-center mb-4">{{errorMsg}}</p>
+                    <p class="error-msg text-center mb-4"><i :class="alert"></i>{{errorMsg}}</p>
 
                     <div class="todolist">
 

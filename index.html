@@ -27,24 +27,31 @@
                 <div class="col">
 
                     <div class="logo text-center mb-5">
-                        <img src="assets/img/logo.png" alt="logo">
+                        <img :src="pathImg + nameImg" :alt="nameImg">
                     </div>
 
-                    <div class="input-area d-flex justify-content-between align-items-center mb-5">
+                    <div class="input-area d-flex justify-content-between align-items-center mb-3">
 
-                        <input type="text" placeholder="Inserisci task">
+                        <input type="text" placeholder="Inserisci task" v-model.trim="valueNewTask">
                         <button type="button" class="btn btn-info btn-lg">Aggiungi</button>
-
+                        
                     </div>
+
+                    <p class="error-msg text-center mb-4">{{errorMsg}}</p>
 
                     <div class="todolist">
 
                         <ul class="list-group">
 
-                            <li class="list-group-item p-3 d-flex justify-content-between align-items-center">
-                                An item
+                            <li
+                                @click="task.done = !task.done"
+                                :class="{'done' : task.done}"
+                                v-for="(task, index) in todoLists"
+                                class="list-group-item p-3 d-flex justify-content-between align-items-center">
 
-                                <span><i class="fa-regular fa-trash-can"></i></span>
+                            <span class="mx-2">{{task.text}}</span>
+
+                                <i class="fa-regular fa-trash-can mx-2"></i>
 
                             </li>
 

@@ -5,18 +5,23 @@ const { createApp } = Vue;
 createApp({
     data(){
         return{
+            pathImg: 'assets/img/',
+            nameImg:'logo.png',
+            errorMsg:'prova erorre',
+            characters: 5,
+            valueNewTask:'test',
             todoLists: [
                 {
                     text:'Scegliere i componenti del pc',
-                    done: true,
-                },
-                {
-                    text:'Valutare i vari siti',
                     done: false,
                 },
                 {
-                    text:'Comprare i componenti',
+                    text:'Valutare i vari siti',
                     done: true,
+                },
+                {
+                    text:'Comprare i componenti',
+                    done: false,
                 },
             ]
         }
@@ -25,9 +30,10 @@ createApp({
 
     },
     created(){
-
+        console.log('creata');
     },
     mounted(){
-
+        console.log('montata');
+        
     }
 }).mount('#app')

@@ -11,8 +11,9 @@ body {
 }
 
 input {
-    width: 85%;
+    width: 90%;
     padding: 14px 30px;
+    padding-left: 2px;
     margin-right: 10px;
     border: none;
     outline: none;
@@ -21,6 +22,11 @@ input {
 
 input::placeholder {
     font-size: 1.5rem;
+}
+
+span:hover,
+i:hover {
+    cursor: pointer;
 }
 
 .main-wrapper {
@@ -35,4 +41,16 @@ input::placeholder {
 
 .logo img {
     max-width: 400px;
+}
+
+.error-msg {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: red;
+    text-transform: uppercase;
+}
+
+.done {
+    text-decoration: line-through;
 }

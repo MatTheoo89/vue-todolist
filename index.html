@@ -32,8 +32,13 @@
 
                     <div class="input-area d-flex justify-content-between align-items-center mb-3">
 
-                        <input type="text" placeholder="Inserisci task" v-model.trim="valueNewTask">
-                        <button type="button" class="btn btn-info btn-lg">Aggiungi</button>
+                        <input 
+                            @keyup="createTask()"
+                            type="text" placeholder="Inserisci task" v-model.trim="valueNewTask">
+
+                        <button
+                            @click="createTask()"
+                            type="button" class="btn btn-info btn-lg">Aggiungi</button>
                         
                     </div>
 
@@ -51,7 +56,9 @@
 
                             <span class="mx-2">{{task.text}}</span>
 
-                                <i class="fa-regular fa-trash-can mx-2"></i>
+                                <i 
+                                    @click.stop="deleteTask(index)"
+                                    class="fa-regular fa-trash-can mx-2"></i>
 
                             </li>
 

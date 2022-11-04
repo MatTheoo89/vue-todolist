@@ -7,17 +7,17 @@ createApp({
         return{
             pathImg: 'assets/img/',
             nameImg:'logo.png',
-            errorMsg:'prova erorre',
+            errorMsg:'',
             characters: 5,
-            valueNewTask:'test',
+            valueNewTask:'',
             todoLists: [
                 {
                     text:'Scegliere i componenti del pc',
-                    done: false,
+                    done: true,
                 },
                 {
                     text:'Valutare i vari siti',
-                    done: true,
+                    done: false,
                 },
                 {
                     text:'Comprare i componenti',
@@ -27,6 +27,39 @@ createApp({
         }
     },
     methods: {
+        deleteTask(index){
+            this.errorMsg = '';
+            if(this.todoLists[index].done){
+                this.todoLists.splice(index,1)
+            }
+            else{
+                this.errorMsg = 'Attenzione! Devi prima completarla per eliminarla.'
+            }
+        },
+        createTask(){
+            this.errorMsg = '';
+            if(this.valueNewTask.length < 5){
+                this.errorMsg = 'Attenzione! Inserisci almeno 5 caratteri.'
+            }
+            else{
+                const newTask = {
+                    text: this.valueNewTask,
+                    done: false
+                }
+
+                if(this.todoLists.includes(newTask.text)){
+                    this.errorMsg = 'Attenzione! Task già esistente.'
+                }
+                else{
+                    this.todoLists.unshift(newTask);
+                }
+
+                // this.todoLists.unshift(newTask);
+
+            }
+            // this.errorMsg = '';
+            // this.valueNewTask = '';
+        }
 
     },
     created(){

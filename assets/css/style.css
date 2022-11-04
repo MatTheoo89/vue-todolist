@@ -1,0 +1,38 @@
+/* ! DA TOGLIERE CON BOOTSTRAP*/
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+body {
+    background-color: #333;
+}
+
+input {
+    width: 85%;
+    padding: 14px 30px;
+    margin-right: 10px;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+}
+
+input::placeholder {
+    font-size: 1.5rem;
+}
+
+.main-wrapper {
+    max-height: 100vh;
+}
+
+.input-area {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.logo img {
+    max-width: 400px;
+}
